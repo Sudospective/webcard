@@ -1,0 +1,105 @@
+@font-face {
+  font-family: "Sudofont";
+  src: url("/assets/fonts/sudofont-regular.ttf");
+}
+
+@keyframes pop {
+  0% {transform: scale(0)}
+  50% {transform: scale(0)}
+  75% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
+@keyframes wag {
+  0% {transform: rotate(-1deg);}
+  100% {transform: rotate(1deg);}
+}
+@keyframes fade {
+  0% {opacity: 0;}
+  75% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+html {
+  overflow: hidden;
+}
+body {
+  margin: 0;
+}
+header {
+  background: url("/assets/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+}
+#banner {
+  max-width: 70vw;
+  width: 720px;
+  animation-name: pop;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+}
+#banner-wrapper {
+  animation-name: wag;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#tagline {
+  font-family: "Sudofont";
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4F166C;
+  animation-name: fade;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  text-shadow:
+    -0.025rem -0.025rem 0 white,
+    0.025rem -0.025rem 0 white,
+    -0.025rem 0.025rem 0 white,
+    0.025rem 0.025rem 0 white,
+    0.065rem 0.065rem 0.065rem #00000080;
+}
+
+#links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation-name: fade;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+}
+#links p {
+  padding: 0px 12px;
+  user-select: none;
+}
+#links img {
+  height: 36px;
+  filter: drop-shadow(0.065rem 0.065rem 0.065rem #00000080);
+}
+
+@media screen and (min-width: 800px) {
+  #tagline {
+    font-size: 2.5rem;
+    text-shadow:
+      -0.05rem -0.05rem 0 white,
+      0.05rem -0.05rem 0 white,
+      -0.05rem 0.05rem 0 white,
+      0.05rem 0.05rem 0 white,
+      0.15rem 0.15rem 0.15rem #00000080;
+  }
+
+  #links object {
+    height: 36px;
+    filter: drop-shadow(0.15rem 0.15rem 0.15rem #00000080)
+  }
+}
