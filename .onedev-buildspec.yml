@@ -1,10 +1,11 @@
 version: 24
 jobs:
 - name: webhost
+  jobExecutor: site-publish
   steps:
   - !PublishSiteStep
     name: card.sudospective.net
-    artifacts: index.html
+    artifacts: index.html assets/*
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   retryCondition: never
   maxRetries: 3
