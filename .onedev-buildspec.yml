@@ -1,0 +1,12 @@
+version: 24
+jobs:
+- name: webhost
+  steps:
+  - !PublishSiteStep
+    name: card.sudospective.net
+    artifacts: '*'
+    condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
+  retryCondition: never
+  maxRetries: 3
+  retryDelay: 30
+  timeout: 3600
