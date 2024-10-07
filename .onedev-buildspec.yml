@@ -4,6 +4,7 @@ jobs:
   jobExecutor: site-publish
   steps:
   - !PublishSiteStep
+    projectPath: webcard
     name: card.sudospective.net
     artifacts: index.html assets/*
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
