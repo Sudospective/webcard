@@ -4,7 +4,7 @@ jobs:
   steps:
   - !PublishSiteStep
     name: card.sudospective.net
-    artifacts: '*'
+    artifacts: index.html
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   retryCondition: never
   maxRetries: 3
