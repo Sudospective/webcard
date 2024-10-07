@@ -6,6 +6,7 @@ jobs:
   - !PublishSiteStep
     projectPath: webcard
     name: card.sudospective.net
+    sourcePath: /
     artifacts: index.html assets/*
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   retryCondition: never
