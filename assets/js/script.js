@@ -58,12 +58,34 @@ function main() {
     "Part-time Streamer",
     "Softcore Furry",
     "Average Tea Enjoyer",
-    "Software Engineer",
+    "Game Developer",
     "Lua Abuser",
   ];
+  const tagtips = [
+    "My favorite is the Rubik's Cube.",
+    "My most played rhythm game is Project OutFox.",
+    "My father and brother would play DOOM with me when I was very young.",
+    "I sometimes stream over at https://twitch.tv/sudospective.",
+    "I'm very fond of anthropomorphic cartoons. Bluey is pretty cool.",
+    "My favorite is green tea.",
+    "I've helped develop a few games like Cowboys vs. Hipsters and Seekers of the Aether.",
+    "You can see the crimes in my modfiles at https://sudospective.net/modfiles.",
+  ];
   const index = Math.floor(Math.random() * taglines.length);
-  const elem = document.getElementById("tagline");
-  elem.innerHTML = "Game Developer - " + taglines[index];
+  const tagline = document.getElementById("tagline");
+  const tagtip = document.getElementById("tagtip");
+  tagline.innerHTML = "Software Engineer - " + taglines[index];
+  tagtip.innerHTML = tagtips[index];
+
+  console.log(tagline.innerHTML);
+  console.log(tagtip.innerHTML);
+
+  tagline.addEventListener("mouseover", () => {
+    tagtip.style.display = "block";
+  }, false);
+  tagline.addEventListener("mouseleave", () => {
+    tagtip.style.display = "none";
+  }, false);
 }
 
-main();
+window.onload = main;
